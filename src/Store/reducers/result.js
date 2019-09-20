@@ -1,10 +1,6 @@
 import * as actionTypes from '../Constants';
 const initialState = {
-    results: [
-        {id: 'dsdsd', value: 'dsdsleeladsd'},
-        {id: 'dsdsasasd', value: 'devadsdsdsd'},
-        {id: 'dsdewewsd', value: 'dsnaveendsdsd'},
-    ]
+    results: []
 }
 
 

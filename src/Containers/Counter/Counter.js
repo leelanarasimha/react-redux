@@ -10,7 +10,11 @@ class Counter extends Component {
         return (
             <div>
                 <CounterOutput counter={this.props.counter}/>
-                <CounterControl clicked={this.props.incrementcounter}/>
+
+                <CounterControl 
+                clicked={this.props.incrementcounter}
+                storeclicked={() => this.props.storeclicked(this.props.counter)}/>
+
                 <CounterResult 
                 deleteresult={(value) => this.props.ondeleteresult(value)}
                 results={this.props.results}/>
@@ -29,8 +33,11 @@ const mapDispatchToProps = (dispatch) => {
     return {
         incrementcounter: () => dispatch({type: actionTypes.INCREMENT}),
         ondeleteresult: (value) => {
-            console.log(value);
             return dispatch({type: actionTypes.DELETE_RESULT, id: value});
+        },
+        storeclicked: (value) => {
+
+            return dispatch({type: actionTypes.STORE_RESULT, value: value});
         }
     }
 }
